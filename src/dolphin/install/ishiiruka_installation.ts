@@ -140,8 +140,8 @@ export class IshiirukaDolphinInstallation implements DolphinInstallation {
     const type = this.dolphinLaunchType;
 
     try {
-      await this.findDolphinExecutable();
-      log.info(`Found existing ${type} Dolphin executable.`);
+      let executable = await this.findDolphinExecutable();
+      log.info(`Found existing ${type} Dolphin executable: ${executable}`);
       log.info(`Checking if we need to update ${type} Dolphin`);
 
       const latestVersion = dolphinDownloadInfo?.version;
