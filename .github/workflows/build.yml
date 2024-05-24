@@ -1,6 +1,9 @@
 name: build
 
 on:
+  workflow_dispatch:
+    branches:
+      - "**"
   pull_request:
     branches:
       - main
